@@ -5,7 +5,7 @@
 # session_start();
 ( isset($_GET['id']) ) ? $marko=$_GET['id'] : header('Location: login.php');
 $jaunsier=''; $vaiier=false; $vai2ier=false;
-$ieraksts=file('lietotaji.txt'); #,$flags='FILE_IGNORE_NEW_LINES'
+$ieraksts=file('user.txt'); #,$flags='FILE_IGNORE_NEW_LINES'
 ( substr_count(implode('',$ieraksts),"\r") == substr_count(implode('',$ieraksts),"\n") ) ? $thisisunix="\r" : $thisisunix='';
 foreach ($ieraksts as $noskey => $nosval) {
 		$nosavl=explode(' ',$nosval); #echo $nosavl[0].' '.$nosavl[3].' '.strlen(rtrim($nosavl[4])).'<br>'; 
@@ -23,18 +23,15 @@ foreach ($ieraksts as $noskey => $nosval) {
 			#echo 'nav<br>';
 		}
 		$jaunsier.=$plusss;
-		if ($vaiier or $vai2ier) break;
+		if ($vai2ier) break;
 	}
-
 	if ($vaiier and ! $vai2ier) {
-		file_put_contents('lietotaji.txt',$ieraksts);
+		file_put_contents('user.txt',$jaunsier);
 		echo '<h2>Jauns lietotājs ir veiksmīgi apstiprināts! Tūlīt tiks atvērta pierakstīšanās lapa.</h2>';
 	} elseif (! $vai2ier) {
 		echo '<h2>Šāds apstiprinājuma numurs nav atrasts datubāzē!</h2>';
 	}
 	header('refresh:5;url=login.php');
-
-
 ?>
 
 
