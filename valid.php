@@ -33,8 +33,5 @@ foreach ($ieraksts as $noskey => $nosval) {
 	}
 	header('refresh:5;url=login.php');
 ?>
-
-
-
 </body>
 </html>
