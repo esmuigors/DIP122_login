@@ -7,7 +7,7 @@
 <table><tr><td><label for="username">Lietotāja vārds:</label> </td><td><input type="text" name="username" required="required" placeholder="Me"> </td></tr>
 <tr><td><label for="password">Parole:</label> </td><td><input type="password" name="password" required="required" placeholder="qwerty"> </td></tr>
 <tr><td><label for="password2">Parole vēlreiz:</label> </td><td><input type="password" name="password2" required="required" placeholder="qwerty"> </td></tr></table>
-<div class="clearfix"><input type="submit" name="sendlogin" value="Reģistrēties"></div>
+<div class="clearfix"><input type="submit" name="sendlogin" value="Reģistrēties" class="signupbtn"></div>
 </form>
 
 <?php
