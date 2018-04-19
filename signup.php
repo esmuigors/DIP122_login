@@ -4,11 +4,10 @@
 <div class="container"><h1>Lūdzu ievadīt autorizācijas datus:</h1>
 
 <form method="post" style="border:1px solid #ccc"> <!--pēc noklusējuma ir GET!-->
-<table><tr><td><label for="username">Lietotāja vārds:</label> </td><td><input type="text" name="username" required="required" placeholder="Me"> </td></tr>
+<table style="width: 100%"><tr><td><label for="username">Lietotāja vārds:</label> </td><td><input type="text" name="username" required="required" placeholder="Me"> </td></tr>
 <tr><td><label for="password">Parole:</label> </td><td><input type="password" name="password" required="required" placeholder="qwerty"> </td></tr>
 <tr><td><label for="password2">Parole vēlreiz:</label> </td><td><input type="password" name="password2" required="required" placeholder="qwerty"> </td></tr></table>
-<div class="clearfix"><input type="submit" name="sendlogin" value="Reģistrēties" class="signupbtn"></div>
-</form>
+<div class="clearfix"><button type="submit" name="sendlogin" class="signupbtn">Reģistrēties</button></div>
 
 <?php
 session_start();
@@ -40,5 +39,6 @@ else {
 ?>
 <p style="color:#999">Šī lapa vēl neizmanto sīkdatnes. Lūdzu, turpiniet un nedomājiet par tām!</p>
 </div>
+</form>
 </body>
 </html>
