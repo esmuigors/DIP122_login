@@ -7,7 +7,7 @@
 <table style="width: 100%"><tr><td><label for="username">Lietotāja vārds:</label> </td><td><input type="text" name="username" required="required" placeholder="Ernests Birznieks-Upītis"> </td></tr>
 <tr><td><label for="password">Parole:</label> </td><td><input type="password" name="password" required="required" placeholder="gbu65s8ci67e"> </td></tr>
 <tr><td><label for="password2">Parole vēlreiz:</label> </td><td><input type="password" name="password2" required="required" placeholder="gbu65s8ci67e"> </td></tr></table>
-<div class="clearfix"><button type="submit" name="sendlogin" class="signupbtn">Reģistrēties</button></div>
+	<div class="clearfix"><button type="submit" name="sendlogin" class="signupbtn"><b>Reģistrēties</b></button></div>
 
 <?php
 session_start();
