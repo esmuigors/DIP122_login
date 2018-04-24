@@ -16,7 +16,6 @@ if ($_SESSION['dati']!='') {
 	else {
 		echo '<a href="https://duckduckgo.com">Jūsu ērtībām <i>DuckDuckGo</i> meklētājs</a>';
 	}
-	echo 'Jūs esat'];
 }
 else {
 	header('Location: login.php');
