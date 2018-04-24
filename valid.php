@@ -10,7 +10,7 @@ $ieraksts=file('user.txt'); #,$flags='FILE_IGNORE_NEW_LINES'
 foreach ($ieraksts as $noskey => $nosval) {
 		$nosavl=explode(' ',$nosval); #echo $nosavl[0].' '.$nosavl[3].' '.strlen(rtrim($nosavl[4])).'<br>'; 
 		if ($nosavl[3]==$marko AND rtrim($nosavl[4])=='false') {
-			$plusss=$nosavl[0].' '.$nosavl[1].' '.$nosavl[2].' '.$nosavl[3].' true'.$thisisunix."\n";
+			$plusss=$nosavl[0].' '.$nosavl[1].' '.$nosavl[2].' '.$nosavl[3].' true '.$nosavl[5].' '.$nosavl[6].$thisisunix."\n";
 			$vaiier=true;
 			#echo 'ir<br>';
 		} elseif ($nosavl[3]==$marko AND rtrim($nosavl[4])=='true') {

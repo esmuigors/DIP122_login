@@ -18,7 +18,6 @@ if ($userlogin) {
 else {
 	if (isset($_POST['sendlogin'])) {
 		$user=$_POST['username'];
-		echo '<br>'.$ier1.'<br>';
 		$password=$_POST['password'];
 		$password2=$_POST['password2'];
 		include 'onlyuser.php';

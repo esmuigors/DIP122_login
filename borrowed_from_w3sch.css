@@ -46,7 +46,7 @@ button:hover {
 }
 
 /* Extra styles for the cancel button */
-.cancelbtn {
+.logoutbtn {
   padding: 14px 20px;
   background-color: #f44336;
 }
