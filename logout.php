@@ -1,5 +1,5 @@
 <html>
-<head><title>Ienākšana sistēmā</title><link rel="stylesheet" type="text/css" href="borrowed_from_w3sch.css"></head>
+<head><title>Lietotāja rīki: SIA IzslauktPlus</title><link rel="stylesheet" type="text/css" href="borrowed_from_w3sch.css"></head>
 <body>
 <?php
 session_start();
