@@ -1,11 +1,11 @@
 <?php
-$jaunsier='';
+$jaunsier=''; $kuroreizi='';
 $ieraksts=file('user.txt'); #,$flags='FILE_IGNORE_NEW_LINES'
 ( substr_count(implode('',$ieraksts),"\r") == substr_count(implode('',$ieraksts),"\n") ) ? $thisisunix="\r" : $thisisunix='';
 foreach ($ieraksts as $noskey => $nosval) {
 		$nosavl=explode(' ',$nosval); #echo $nosavl[0].' '.$nosavl[3].' '.strlen(rtrim($nosavl[4])).'<br>'; 
 		if ($nosavl[0]==$_SESSION['user']) {
-			$nosavl[6]=$nosavl[6]+1;
+			$nosavl[6]=$nosavl[6]+1; $kuroreizi=$nosavl[6];
 			$plusss=$nosavl[0].' '.$nosavl[1].' '.$nosavl[2].' '.$nosavl[3].' '.$nosavl[4].' '.$nosavl[5].' '.$nosavl[6].$thisisunix."\n";
 		}
 		else {
