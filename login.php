@@ -26,7 +26,7 @@ else {
 		}
 		else {
 			include 'counter.php';
-			header('Location: logout.php');
+			header('Location: logout.php?kuror='.$kuroreizi);
 		}
 	}
 	elseif (isset($_POST['go2signup'])) {
