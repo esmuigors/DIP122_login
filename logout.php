@@ -16,7 +16,7 @@ if ($_SESSION['dati']!='') {
 	else {
 		echo '<a href="https://duckduckgo.com">Jūsu ērtībām <i>DuckDuckGo</i> meklētājs</a>';
 	}
-	if (isset($_GET['kuror']) {
+	if (isset($_GET['kuror'])) {
 		echo '<br><hr><br>Jūs esat ielogojies sistēmā jau '.$_GET['kuror'].' reizi!';
 		if ($_GET['kuror'] > 5) { echo ' Paldies par uzticību!'; }
 	}
