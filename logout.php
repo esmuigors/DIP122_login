@@ -11,10 +11,10 @@ echo '<div class="container"><h1>Laipni lūdzam sistēmā, '.$_SESSION['user'].'
 <?php
 if ($_SESSION['dati']!='') {
 	if ($_SESSION['dati']=='1') {
-		echo '<a href="https://google.lv">Jūsu ērtībām <i>Google</i> meklētājs</a>';
+		echo '<a href="https://google.lv" name="mekl_saite">Jūsu ērtībām <i>Google</i> meklētājs</a>';
 	}
 	else {
-		echo '<a href="https://duckduckgo.com">Jūsu ērtībām <i>DuckDuckGo</i> meklētājs</a>';
+		echo '<a href="https://duckduckgo.com" name="mekl_saite">Jūsu ērtībām <i>DuckDuckGo</i> meklētājs</a>';
 	}
 	if (isset($_GET['kuror'])) {
 		echo '<br><hr><br>Jūs esat ielogojies sistēmā jau '.$_GET['kuror'].' reizi!';
