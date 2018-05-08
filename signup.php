@@ -18,8 +18,8 @@ if ($userlogin) {
 else {
 	if (isset($_POST['sendlogin'])) {
 		$user=$_POST['username'];
-		$password=$_POST['password'];
-		$password2=$_POST['password2'];
+		$pass=$_POST['password'];
+		$pass2=$_POST['password2'];
 		include 'onlyuser.php';
 		if ($userexists) {
 			echo 'Šāds lietotājs jau ir reģistrējies!';
