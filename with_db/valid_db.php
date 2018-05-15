@@ -6,7 +6,7 @@
 ( isset($_GET['id']) ) ? $marko=$_GET['id'] : header('Location: login.php');
 $jaunsier=''; $vaiier=false; $vai2ier=false;
 include 'db.php';
-$sqlq = mysql_query("select hasshy, ifvaled from authen;");
+$sqlq = mysql_query("select hasshy, ifvaled from authen where hasshy='".$marko."';");
 $valarr = array(); $vaiier = 'false'; $vai2ier = 'false';
 
 while ($row_user = mysql_fetch_assoc($sqlq)){
