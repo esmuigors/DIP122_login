@@ -19,7 +19,6 @@ else {
 	if (isset($_POST['sendlogin'])) {
 		$user=$_POST['username'];
 		$pass=$_POST['password'];
-		$pass2=$_POST['password2'];
 		include 'ifuserfound.php';
 		if ($_SESSION['dati']=='') {
 			echo 'Ievadītie reģistrācijas dati ir nepareizi. Lūdzu, mēģiniet vēlreiz!';
