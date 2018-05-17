@@ -6,13 +6,13 @@
 <tr><td>
 Aptaujas nosaukums:
 </td><td>
-<input type="text" name = "title" /> 
+<input type="text" required="required" name = "title" /> 
 </tr><tr>
 <td>
 1.jautajums:
 </td><td>
 
-<input type="text" name = "1j" /> 
+<input type="text" required="required" name = "1j" /> 
 </td>
 </tr>
 <tr>
@@ -20,7 +20,7 @@ Aptaujas nosaukums:
 2.jautajums:
 </td><td>
 
-<input type="text" name = "2j" /> 
+<input type="text" required="required" name = "2j" /> 
 </td>
 </tr>
 <tr>
@@ -28,7 +28,7 @@ Aptaujas nosaukums:
 3.jautajums:
 </td><td>
 
-<input type="text" name = "3j" /> 
+<input type="text" required="required" name = "3j" /> 
 </td>
 </tr>
 </table>
@@ -49,7 +49,7 @@ $title = $_POST['title'] ;
 include 'createnewtxt.php';
 }
 else
-	echo 'Lūdzu, ievadiet jautājumus!';
+	echo '<h3>Lūdzu, ievadiet jautājumus!</h3>';
 }
 }
 
