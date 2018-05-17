@@ -31,6 +31,7 @@ while ($row_user = mysql_fetch_assoc($sqlq)){
 if (not ($vaiier or $vai2ier)) {
 	echo '<h2>Šāds apstiprinājuma numurs nav atrasts datubāzē!</h2>';
 }
+include 'end_db.php';
 header('refresh:5;url=login.php');
 ?>
 </body>
