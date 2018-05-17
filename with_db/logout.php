@@ -13,11 +13,11 @@ if ($_SESSION['dati']!='') {
 	if ($_SESSION['dati']==='1') {
 		echo '<a href="https://google.lv" name="mekl_saite">Jūsu ērtībām <i>Google</i> meklētājs</a><br><br>';
 		echo '<a href="newquestionary.php" name="jaunformas_saite">Šeit Jūs varat izveidot jaunu aptauju</a><br><br>';
-		echo '<a href="responsary.php" name="aptaujas_saite">Šeit Jūs varat aizpildīt kādu aptauju</a>';
+		echo '<a href="visasanketas.php" name="aptaujas_saite">Šeit Jūs varat aizpildīt kādu aptauju</a>';
 	}
 	else {
 		echo '<a href="https://duckduckgo.com" name="mekl_saite">Jūsu ērtībām <i>DuckDuckGo</i> meklētājs</a>';
-		echo '<a href="responsary.php" name="aptaujas_saite">Šeit Jūs varat aizpildīt kādu aptauju</a>';
+		echo '<a href="visasanketas.php" name="aptaujas_saite">Šeit Jūs varat aizpildīt kādu aptauju</a>';
 	}
 	if (isset($_GET['kuror'])) {
 		echo '<br><hr><br>Jūs esat ielogojies sistēmā jau '.$_GET['kuror'].' reizi!';
