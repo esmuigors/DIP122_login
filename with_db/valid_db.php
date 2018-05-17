@@ -2,17 +2,16 @@
 <head><title>Reģistrācijas apstiprināšana</title></head>
 <body>
 <?php
-# session_start();
 ( isset($_GET['id']) ) ? $marko=$_GET['id'] : header('Location: login.php');
 $jaunsier=''; $vaiier=false; $vai2ier=false;
 include 'db.php';
-$sqlq = mysql_query("select hasshy, ifvaled from authen where hasshy='".$marko."';");
+$sqlq = mysqli_query($db,"select hasshy, ifvaled from authen where hasshy='".$marko."';");
 $valarr = array(); $vaiier = 'false'; $vai2ier = 'false';
 
-while ($row_user = mysql_fetch_assoc($sqlq)){
+while ($row_user = mysqli_fetch_assoc($sqlq)){
     if ($row_user['hasshy']===$marko) {
 		if ($row_user['ifvaled']===0) {
-			$sqlq2 = mysql_query("insert into authen set ifvaled=1 where hasshy='".$marko."';");
+			$sqlq2 = mysqli_query("insert into authen set ifvaled=1 where hasshy='".$marko."';");
 			if (!$sqlq2) {
 				echo "Could not validate user due to DB issues " . mysql_error();
 				exit;
