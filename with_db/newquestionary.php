@@ -31,12 +31,8 @@ Aptaujas nosaukums:
 <input type="text" name = "3j" /> 
 </td>
 </tr>
-<tr> 
-<td colspan="2" align ="right">
-<input type ="submit" value = "Izveidot" name ="create" /> 
-</td>
-</tr>
 </table>
+<div class="clearfix"><button type="submit" name="create" class="signupbtn"><b>Izveidot</b></button></div>
 </form>
 
 <?php
