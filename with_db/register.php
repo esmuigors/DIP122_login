@@ -3,7 +3,7 @@
 $haashy=substr(md5(rand()), 0, 16); # © tasmaniski@SO.com
 $sqlq2 = mysqli_query($db,"insert into authen values ('".$user."','".$pass."',0,'".$haashy."',0,0,0)");
 if (!$sqlq2) {
- 				echo "Nevar reģistrēt lietotāju SQL problēmu dēļ: " . mysql_error();
+ 				echo "Nevar reģistrēt lietotāju SQL problēmu dēļ: " . mysqli_error();
  				exit;
 }
 else {
