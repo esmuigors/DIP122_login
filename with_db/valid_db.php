@@ -8,12 +8,14 @@ include 'db.php';
 $sqlq = mysqli_query($db,"select hasshy, ifvaled from authen where hasshy='".$marko."';");
 $valarr = array(); $vaiier = 'false'; $vai2ier = 'false';
 
-while ($row_user = mysqli_fetch_assoc($sqlq)){
-    if ($row_user['hasshy']===$marko) {
+//while (
+$row_user = mysqli_fetch_assoc($sqlq)
+//){
+  //  if ($row_user['hasshy']===$marko) {
 		if ($row_user['ifvaled']===0) {
 			$sqlq2 = mysqli_query("insert into authen set ifvaled=1 where hasshy='".$marko."';");
 			if (!$sqlq2) {
-				echo "Could not validate user due to DB issues " . mysql_error();
+				echo "Nevar apstiprināt lietotāju SQL problēmu dēļ: " . mysql_error();
 				exit;
 			}
 			echo '<h2>Jauns lietotājs ir veiksmīgi apstiprināts! Tūlīt tiks atvērta pierakstīšanās lapa.</h2>';
@@ -24,9 +26,9 @@ while ($row_user = mysqli_fetch_assoc($sqlq)){
 			$plusss=$nosval;
 			$vai2ier=true;
 		}
-		break;
-	}
-}
+//		break;
+//	}
+//}
 if (not ($vaiier or $vai2ier)) {
 	echo '<h2>Šāds apstiprinājuma numurs nav atrasts datubāzē!</h2>';
 }
