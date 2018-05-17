@@ -49,7 +49,7 @@ $title = $_POST['title'] ;
 include 'createnewtxt.php';
 }
 else
-	echo 'Ludzu ievadiet jautajumus';
+	echo 'Lūdzu, ievadiet jautājumus!';
 }
 }
 
