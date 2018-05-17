@@ -1,8 +1,10 @@
-<html> 
+<html> <head><title>Jaunas anketas izveidošana</title><link rel="stylesheet" type="text/css" href="borrowed_from_w3sch.css"></head>
+<body>
+<div class="container">
 <table border="2">
 <tr><td>
-<form method = "POST"> 
-Testa nosaukums:
+<form method="post" style="border:1px solid #ccc"> 
+Aptaujas nosaukums:
 </td><td>
 <input type="text" name = "title" /> 
 </tr><tr>
@@ -56,4 +58,4 @@ else
 }
 
 ?>
-</body></html>
+</div></body></html>
