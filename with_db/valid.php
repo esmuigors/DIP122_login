@@ -3,15 +3,12 @@
 <body>
 <?php
 ( isset($_GET['id']) ) ? $marko=$_GET['id'] : header('Location: login.php');
-$jaunsier=''; $vaiier=false; $vai2ier=false;
 include 'db.php';
 $sqlq = mysqli_query($db,"select hasshy, ifvaled from authen where hasshy='".$marko."';");
-$valarr = array(); $vaiier = 'false'; $vai2ier = 'false';
 
 //while (
-$row_user = mysqli_fetch_assoc($sqlq)
+if ($row_user = mysqli_fetch_assoc($sqlq)) {
 //){
-  //  if ($row_user['hasshy']===$marko) {
 		if ($row_user['ifvaled']===0) {
 			$sqlq2 = mysqli_query("insert into authen set ifvaled=1 where hasshy='".$marko."';");
 			if (!$sqlq2) {
@@ -20,17 +17,13 @@ $row_user = mysqli_fetch_assoc($sqlq)
 			}
 			mysqli_free_result($sqlq2);
 			echo '<h2>Jauns lietotājs ir veiksmīgi apstiprināts! Tūlīt tiks atvērta pierakstīšanās lapa.</h2>';
-			$vaiier=true;
 		}
 		else {
 			echo '<h2>Šāds lietotājs jau ir apstiprināts!</h2>';
-			$plusss=$nosval;
-			$vai2ier=true;
 		}
 //		break;
-//	}
-//}
-if (not ($vaiier or $vai2ier)) {
+}
+else {
 	echo '<h2>Šāds apstiprinājuma numurs nav atrasts datubāzē!</h2>';
 }
 mysqli_free_result($sqlq);
