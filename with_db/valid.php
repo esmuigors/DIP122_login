@@ -12,7 +12,7 @@ if ($row_user = mysqli_fetch_assoc($sqlq)) {
 		if ($row_user['ifvaled']===0) {
 			$sqlq2 = mysqli_query("insert into authen set ifvaled=1 where hasshy='".$marko."';");
 			if (!$sqlq2) {
-				echo "Nevar apstiprināt lietotāju SQL problēmu dēļ: " . mysql_error();
+				echo "Nevar apstiprināt lietotāju SQL problēmu dēļ: " . mysqli_error();
 				exit;
 			}
 			mysqli_free_result($sqlq2);
