@@ -12,4 +12,6 @@ else if (strpos($ieraksts,$ier2)!==false){
 	$_SESSION['dati']='2';
 	$_SESSION['user']=$user;
 }
+// problēma: netiek pārbaudīts, vai konts ir apstirināts "caur e-pastu"
+// tiks labots db versijā
 ?>
