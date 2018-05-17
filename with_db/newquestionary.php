@@ -1,9 +1,9 @@
 <html> <head><title>Jaunas anketas izveidošana</title><link rel="stylesheet" type="text/css" href="borrowed_from_w3sch.css"></head>
 <body>
 <div class="container">
+<form method="post" style="border:1px solid #ccc"> 
 <table border="2">
 <tr><td>
-<form method="post" style="border:1px solid #ccc"> 
 Aptaujas nosaukums:
 </td><td>
 <input type="text" name = "title" /> 
