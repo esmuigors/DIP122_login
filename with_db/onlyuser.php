@@ -1,6 +1,6 @@
 
 <?php
-$sqlq = mysqli_query($db,"SELECT user FROM authen where user='".$user."'");
+$sqlq = mysqli_query($db,"SELECT usname FROM authen where user='".$user."'");
 if ($sqlq) {
   $userexists = TRUE;
 } else {
