@@ -18,6 +18,7 @@ $row_user = mysqli_fetch_assoc($sqlq)
 				echo "Nevar apstiprināt lietotāju SQL problēmu dēļ: " . mysql_error();
 				exit;
 			}
+			mysqli_free_result($sqlq2);
 			echo '<h2>Jauns lietotājs ir veiksmīgi apstiprināts! Tūlīt tiks atvērta pierakstīšanās lapa.</h2>';
 			$vaiier=true;
 		}
