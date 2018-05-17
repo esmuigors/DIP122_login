@@ -5,7 +5,7 @@ if (isset($_POST['galaa'])) {
   mysqli_free_result($sqlq);
   $sqlq = mysqli_query("insert into responses values (".$idiks.",'".$user."','".$nos."','".$_POST['r1']."','".$_POST['r2']."','".$_POST['r3']."')");
   if (!$sqlq) {
- 	echo "Diemžēl nebija iespējams saglabāt aptaujas rezultātus SQL problēmu dēļ: " . mysql_error();
+ 	echo "Diemžēl nebija iespējams saglabāt aptaujas rezultātus SQL problēmu dēļ: " . mysqli_error();
  	exit;
   }
   mysqli_free_result($sqlq);
