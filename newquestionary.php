@@ -38,6 +38,10 @@ Testa nosaukums:
 </form>
 
 <?php
+if ($_SESSION['dati']!==1) {
+	echo 'Formu radīšana ir pieejama tikai administratoram!';
+	header('Location: logout.php');
+} else {
 if($_POST['create']){
 $title = $_POST['title'] ; 
 	$pj = $_POST['1j'] ; 
@@ -49,7 +53,7 @@ include 'createnewtxt.php';
 else
 	echo 'Ludzu ievadiet jautajumus';
 }
-	
+}
 
 ?>
-</html>
+</body></html>
