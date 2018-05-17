@@ -26,7 +26,7 @@ else {
 			echo 'Šāds lietotājs jau ir reģistrējies!';
 		}
 		else {
-			if ($password === $password2) {
+			if ($pass === $pass2) {
 				include 'register.php';
 			}
 			else {
