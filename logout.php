@@ -10,11 +10,14 @@ echo '<div class="container"><h1>Laipni lūdzam sistēmā, '.$_SESSION['user'].'
 <label for="mekl_saite">Rīkjosla:</label></td></tr><tr><td bgcolor="#D1F1A2">
 <?php
 if ($_SESSION['dati']!='') {
-	if ($_SESSION['dati']=='1') {
-		echo '<a href="https://google.lv" name="mekl_saite">Jūsu ērtībām <i>Google</i> meklētājs</a>';
+	if ($_SESSION['dati']==='1') {
+		echo '<a href="https://google.lv" name="mekl_saite">Jūsu ērtībām <i>Google</i> meklētājs</a><br><br>';
+		echo '<a href="newquestionary.php" name="jaunformas_saite">Šeit Jūs varat izveidot jaunu aptauju</a><br><br>';
+		echo '<a href="visasanketas.php" name="aptaujas_saite">Šeit Jūs varat aizpildīt kādu aptauju</a>';
 	}
 	else {
-		echo '<a href="https://duckduckgo.com" name="mekl_saite">Jūsu ērtībām <i>DuckDuckGo</i> meklētājs</a>';
+		echo '<a href="https://duckduckgo.com" name="mekl_saite">Jūsu ērtībām <i>DuckDuckGo</i> meklētājs</a><br><br>';
+		echo '<a href="visasanketas.php" name="aptaujas_saite">Šeit Jūs varat aizpildīt kādu aptauju</a>';
 	}
 	if (isset($_GET['kuror'])) {
 		echo '<br><hr><br>Jūs esat ielogojies sistēmā jau '.$_GET['kuror'].' reizi!';
@@ -36,7 +39,6 @@ if (isset($_POST['loutbtn'])) {
 	session_destroy();
 	header('Location: login.php');
 }
-
 ?>
 <p style="color:#999">Šī lapa vēl neizmanto sīkdatnes. Lūdzu, turpiniet un nedomājiet par tām!</p>
 </div>

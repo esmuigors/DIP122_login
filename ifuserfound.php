@@ -1,17 +1,14 @@
 <?php
-$f1="user.txt";
-$ieraksts = file_get_contents($f1);
-$ier1=$user." ".$pass." 1";
-$ier2=$user." ".$pass." 2";
 $_SESSION['dati']='';
-if (strpos($ieraksts,$ier1)!==false){
-	$_SESSION['dati']='1';
-	$_SESSION['user']=$user;
+$sqlq = mysqli_query($db,"select usname, ifadmin, ifvaled from authen where usname='".$user."' and passy='".$pass."';");
+if ($sqlq) {
+  $kasesmu=mysqli_fetch_assoc($sqlq);
+  if ($kasesmu['ifvaled']==1) {
+  	$_SESSION['dati']=$kasesmu['ifadmin'];
+  	$_SESSION['user']=$user;
+  } else {
+	echo "<h2>Nav saņemts apstiprinājums no lietotāja e-pasta!</h2>";
+  }
 }
-else if (strpos($ieraksts,$ier2)!==false){
-	$_SESSION['dati']='2';
-	$_SESSION['user']=$user;
-}
-// problēma: netiek pārbaudīts, vai konts ir apstirināts "caur e-pastu"
-// tiks labots db versijā
+mysqli_free_result($sqlq);
 ?>

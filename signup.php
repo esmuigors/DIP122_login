@@ -1,7 +1,7 @@
 <html>
 <head><title>Reģistrācija sistēmā</title><link rel="stylesheet" type="text/css" href="borrowed_from_w3sch.css"></head>
 <body>
-<div class="container"><h1>Lūdzu ievadīt autorizācijas datus:</h1>
+<div class="container"><h1>Lūdzu ievadīt reģistrācijas datus:</h1>
 
 <form method="post" style="border:1px solid #ccc"> <!--pēc noklusējuma ir GET!-->
 <table style="width: 100%"><tr><td><label for="username">Lietotāja vārds:</label> </td><td><input type="text" name="username" required="required" placeholder="Ernests Birznieks-Upītis"> </td></tr>
@@ -11,6 +11,7 @@
 
 <?php
 session_start();
+include 'db.php';
 include 'ifnotuserblank.php';
 if ($userlogin) {
 	header('Location: logout.php');
@@ -25,7 +26,7 @@ else {
 			echo 'Šāds lietotājs jau ir reģistrējies!';
 		}
 		else {
-			if ($password === $password2) {
+			if ($pass === $pass2) {
 				include 'register.php';
 			}
 			else {
@@ -34,7 +35,7 @@ else {
 		}
 	}
 }
-
+include 'end_db.php';
 ?>
 <p style="color:#999">Šī lapa vēl neizmanto sīkdatnes. Lūdzu, turpiniet un nedomājiet par tām!</p>
 </div>

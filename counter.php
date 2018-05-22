@@ -1,17 +1,14 @@
 <?php
 $jaunsier=''; $kuroreizi='';
-$ieraksts=file('user.txt'); #,$flags='FILE_IGNORE_NEW_LINES'
-( substr_count(implode('',$ieraksts),"\r") == substr_count(implode('',$ieraksts),"\n") ) ? $thisisunix="\r" : $thisisunix='';
-foreach ($ieraksts as $noskey => $nosval) {
-		$nosavl=explode(' ',$nosval); #echo $nosavl[0].' '.$nosavl[3].' '.strlen(rtrim($nosavl[4])).'<br>'; 
-		if ($nosavl[0]==$_SESSION['user']) {
-			$nosavl[6]=$nosavl[6]+1; $kuroreizi=$nosavl[6];
-			$plusss=$nosavl[0].' '.$nosavl[1].' '.$nosavl[2].' '.$nosavl[3].' '.$nosavl[4].' '.$nosavl[5].' '.$nosavl[6].$thisisunix."\n";
-		}
-		else {
-			$plusss=$nosval;
-		}
-		$jaunsier.=$plusss;
-	}
-	file_put_contents('user.txt',$jaunsier);
+$sqlq = mysqli_query($db,"select howoft,usname from authen where usname='$user'");
+if ($sqlq) {
+  $row_user = mysqli_fetch_assoc($sqlq);
+  echo $row_user['howoft'].'<br>'.$row_user['usname'];
+  $kuroreizi=$row_user['howoft']+1;
+  $sqlq2 = mysqli_query($db,"update authen set howoft=$kuroreizi where usname='$user'");
+  mysqli_free_result($sqlq2);
+} else {
+  echo "Nevarēja atgūt skaitītāja datus!";
+}
+mysqli_free_result($sqlq);
 ?>

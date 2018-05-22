@@ -11,6 +11,7 @@
 
 <?php
 session_start();
+include 'db.php';
 include 'ifnotuserblank.php';
 if ($userlogin) {
 	header('Location: logout.php');
@@ -25,6 +26,7 @@ else {
 		}
 		else {
 			include 'counter.php';
+			//header('refresh:5;url=logout.php?kuror='.$kuroreizi);
 			header('Location: logout.php?kuror='.$kuroreizi);
 		}
 	}
@@ -32,7 +34,7 @@ else {
 		header('Location: signup.php');
 	}
 }
-
+include 'end_db.php';
 ?>
 <p style="color:#999">Šī lapa vēl neizmanto sīkdatnes. Lūdzu, turpiniet un nedomājiet par tām!</p>
 </div>
