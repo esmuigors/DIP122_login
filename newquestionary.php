@@ -11,7 +11,8 @@ if ($_SESSION['dati']!=='1') {
 ?>
 	<div class="container">
 	<form method="post" style="border:1px solid #ccc"> 
-	<table border="2">
+	<div style="overflow-x:auto;">
+	<table>
 	<tr><td>
 	Aptaujas nosaukums:
 	</td><td>
@@ -41,25 +42,24 @@ if ($_SESSION['dati']!=='1') {
 	</td>
 	</tr>
 	</table>
-	<!--<div class="clearfix"><button type="submit" name="create" class="signupbtn"><b>Izveidot</b></button></div>-->
-	<input type="submit" name="create" title="Izveidot"/>
+	</div> <!--of table-->
+	<div class="clearfix"><button type="submit" name="createq" class="signupbtn"><b>Izveidot</b></button></div>
+	<!--<input type="submit" name="create" title="Izveidot"/>-->
 	</form>
 
 
 <?php
-if($_POST['create']){
-	echo '123';
+if(isset($_POST['createq'])){
 	$title = $_POST['title'] ; 
 	$pj = $_POST['1j'] ; 
 	$oj = $_POST['2j'] ; 
 	$tj = $_POST['3j'] ; 
-	echo $title.'<br>'.$tj;
 	if ($title != "" and $pj != "" and $oj!="" and $tj!="") {
-		echo '<h3>ok!</h3>';
 		include 'createnewtxt.php';
+		echo '<br><h3>Jauna aptauja ir veiksmīgi izveidota!</h3>';
 	}
 	else {
-		echo '<h3>Lūdzu, ievadiet jautājumus!</h3>';
+		echo '<br><div class="text-center"><h3>Lūdzu, ievadiet jautājumus!</h3></div>';
 	}
 } else {
 	echo '
@@ -67,4 +67,5 @@ if($_POST['create']){
 	';	
 }
 ?>
+<br><hr><br><a href="logout.php" name="maju_saite">Atpakaļ uz lietotāja pamatlapu</a>
 </div></body></html>
